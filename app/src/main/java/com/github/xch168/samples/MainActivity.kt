@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.github.xch168.samples.lifecycles.LifecycleDemoActivity
 import com.github.xch168.samples.retrofitcoroutines.RetrofitCoroutinesActivity
+import com.github.xch168.samples.room.RoomDemoActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,5 +20,9 @@ class MainActivity : AppCompatActivity() {
 
     fun openLifecyclePage(view: View) {
         LifecycleDemoActivity.open(this)
+    }
+
+    fun openRoomDemo(view: View) {
+        RoomDemoActivity.open(this)
     }
 }
