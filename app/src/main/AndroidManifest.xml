@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".retrofitcoroutines.RetrofitCoroutinesActivity" />
         <activity android:name=".lifecycles.LifecycleDemoActivity" />
-        <activity android:name=".room.RoomDemoActivity"/>
+        <activity android:name=".room.RoomDemoActivity" />
+        <activity android:name=".material.MaterialActivity"/>
     </application>
 
 </manifest>

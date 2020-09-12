@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.github.xch168.samples.lifecycles.LifecycleDemoActivity
+import com.github.xch168.samples.material.MaterialActivity
 import com.github.xch168.samples.retrofitcoroutines.RetrofitCoroutinesActivity
 import com.github.xch168.samples.room.RoomDemoActivity
 
@@ -24,5 +25,9 @@ class MainActivity : AppCompatActivity() {
 
     fun openRoomDemo(view: View) {
         RoomDemoActivity.open(this)
+    }
+
+    fun openMaterialPage(view: View) {
+        MaterialActivity.open(this)
     }
 }
