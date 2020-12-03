@@ -35,7 +35,7 @@ class BoundLocationManager {
             Log.d("BoundLocationManager", "Listener added")
 
             val lastLocation = mLocationManager?.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-            listener.onLocationChanged(lastLocation)
+            lastLocation?.let { listener.onLocationChanged(it) }
         }
 
         @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)

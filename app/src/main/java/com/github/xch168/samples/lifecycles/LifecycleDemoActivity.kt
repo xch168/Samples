@@ -80,17 +80,17 @@ class LifecycleDemoActivity : AppCompatActivity() {
     }
 
     inner class GpsListener : LocationListener {
-        override fun onLocationChanged(location: Location?) {
+        override fun onLocationChanged(location: Location) {
             findViewById<TextView>(R.id.tv_location).text = "${location?.latitude} , ${location?.longitude}"
         }
 
         override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
 
-        override fun onProviderEnabled(provider: String?) {
+        override fun onProviderEnabled(provider: String) {
             Toast.makeText(this@LifecycleDemoActivity, "Provider enabled: $provider", Toast.LENGTH_SHORT).show()
         }
 
-        override fun onProviderDisabled(provider: String?) {}
+        override fun onProviderDisabled(provider: String) {}
 
     }
 
