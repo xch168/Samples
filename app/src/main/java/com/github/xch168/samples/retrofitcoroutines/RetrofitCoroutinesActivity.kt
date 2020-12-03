@@ -7,10 +7,13 @@ import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.github.xch168.samples.R
+import com.ihsanbal.logging.Level
+import com.ihsanbal.logging.LoggingInterceptor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -22,8 +25,15 @@ class RetrofitCoroutinesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_retrofit_coroutines)
 
+        val logger = LoggingInterceptor.Builder()
+            .setLevel(Level.BASIC)
+            .build()
+        val client = OkHttpClient.Builder()
+            .addInterceptor(logger)
+            .build()
         retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/")
+            .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
